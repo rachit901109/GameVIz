@@ -2,4 +2,3 @@ flask
 flask-wtf
 WTForms
 python-dotenv
-```
