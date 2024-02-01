@@ -1,0 +1,80 @@
+body {
+    background-color: #456f84; /* Dark background color */
+    color: #ecf0f1; /* Light text color */
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin-top: 70px; /* Adjusted margin for the navbar */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: #34495e; /* Darker navbar background */
+    padding: 10px;
+    border-bottom: 2px solid #e7e13c; /* Reddish border */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    color: #e1f73e !important;
+    font-size: 24px; /* Larger font for brand */
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ecf0f1 !important; /* Light text color for links */
+}
+
+.navbar-nav.ml-auto {
+    margin-left: auto; /* Align links to the right */
+}
+
+.footer {
+    background-color: #34495e; /* Darker footer background */
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer p {
+    margin-bottom: 0;
+    color: #ecf0f1; /* Light text color for better visibility */
+}
+
+.game-container {
+    margin-top: 20px;
+}
+
+.game-box {
+    border: 2px solid #e74c3c; /* Reddish border for game boxes */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #2c3e50; /* Darker game box background */
+    box-shadow: 0 0 10px rgba(236, 240, 241, 0.5); /* Lighter box shadow */
+}
+
+.game-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 100%;
+}
+
+.game-card:hover,
+.game-card:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.5); /* Reddish box shadow on hover or focus */
+}
+
+.row {
+    margin-top: 20px; /* Add space between rows */
+}
+
+.mine { background: red; }
+.number { background: lightgrey; }
+.empty { background: rgb(63, 149, 91); }
+.grid{display: grid;}
+.cell { height: 20px; width: 20px; border: 1px solid black; display:inline-block; margin: 2px;}
+

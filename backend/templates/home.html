@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="col">
+        <a href="#">
+            <div class="card game-card">
+                <img src="{{ url_for('static', filename='imgs/ttt.jpg') }}" class="card-img-top"
+                    alt="Tic Tac Toe">
+                <div class="card-body">
+                    <h5 class="card-title">Tic Tac Toe</h5>
+                    <p class="card-text">Classic Tic Tac Toe game.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Repeat the pattern for other games with their respective image paths -->
+    <div class="col">
+        <a href="{{ url_for('minesweeper.play') }}">
+            <div class="card game-card">
+                <img src="{{ url_for('static', filename='imgs/ms.png') }}" class="card-img-top"
+                    alt="Minesweeper">
+                <div class="card-body">
+                    <h5 class="card-title">Minesweeper</h5>
+                    <p class="card-text">Classic Minesweeper game.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Repeat the pattern for other games with their respective image paths -->
+    <div class="col">
+        <a href="#">
+            <div class="card game-card">
+                <img src="{{ url_for('static', filename='imgs/8.jpg') }}" class="card-img-top"
+                    alt="8 Puzzle">
+                <div class="card-body">
+                    <h5 class="card-title">8 Puzzle</h5>
+                    <p class="card-text">Sliding puzzle with 8 tiles.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col">
+        <a href="#">
+            <div class="card game-card">
+                <img src="{{ url_for('static', filename='imgs/sudoku.webp') }}" class="card-img-top" alt="Sudoku">
+                <div class="card-body">
+                    <h5 class="card-title">Sudoku</h5>
+                    <p class="card-text">Classic Sudoku puzzle.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Additional game cards -->
+    <div class="col">
+        <a href="#">
+            <div class="card game-card">
+                <img src="{{ url_for('static', filename='imgs/chess_image.jpg') }}" class="card-img-top" alt="Chess">
+                <div class="card-body">
+                    <h5 class="card-title">Chess</h5>
+                    <p class="card-text">Classic game of strategy.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col">
+        <a href="#">
+            <div class="card game-card">
+                <img src="{{ url_for('static', filename='imgs/pacman_image.jpg') }}" class="card-img-top" alt="Pac-Man">
+                <div class="card-body">
+                    <h5 class="card-title">Pac-Man</h5>
+                    <p class="card-text">Classic arcade game.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col">
+        <a href="#">
+            <div class="card game-card">
+                <img src="{{ url_for('static', filename='imgs/snake_image.jpg') }}" class="card-img-top" alt="Snake">
+                <div class="card-body">
+                    <h5 class="card-title">Snake</h5>
+                    <p class="card-text">Classic Snake game.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="col">
+        <a href="#">
+            <div class="card game-card">
+                <img src="{{ url_for('static', filename='imgs/memory_image.jpg') }}" class="card-img-top" alt="Memory">
+                <div class="card-body">
+                    <h5 class="card-title">Memory</h5>
+                    <p class="card-text">Classic memory matching game.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+</div>
+{% endblock %}

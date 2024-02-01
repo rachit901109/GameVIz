@@ -1,0 +1,77 @@
+<!-- minesweeper.html -->
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Minesweeper Game</h2>
+
+    <fieldset>
+        <form method="post" action="{{ url_for('minesweeper.play') }}" class="form-horizontal">
+            {{ form.hidden_tag() }}
+    
+            <div class="form-group row">
+                <label for="{{ form.game_type.id }}" class="col-sm-2 col-form-label">Game Type</label>
+                <div class="col-sm-4">
+                    {{ form.game_type(class="form-control", id=form.game_type.id) }}
+                </div>
+            </div>
+    
+            <div class="form-group row">
+                <label for="{{ form.game_mode.id }}" class="col-sm-2 col-form-label">Game Mode</label>
+                <div class="col-sm-4">
+                    {{ form.game_mode(class="form-control", id=form.game_mode.id) }}
+                </div>
+            </div>
+    </fieldset>
+
+        <div class="form-group row">
+            {{ form.play_button(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+
+<div id="grid" class="grid"></div>
+
+<script>
+    {% if board %}
+    var grid = {{ board | tojson | safe }};
+    var gridSize = grid.length;
+    {% else %}
+    var grid = [];
+    var gridSize = 0;
+    {% endif %}
+    console.log(grid, gridSize);
+
+    // Calculate the number of rows and columns dynamically
+    
+
+    function renderGrid() {
+        var gridElement = document.getElementById('grid');
+        var numCols = gridSize > 0 ? grid[0].length : 0;
+        gridElement.style.gridTemplateColumns = `repeat(${numCols}, 40px)`;
+        gridElement.style.gridTemplateRows = `repeat(${gridSize}, 40px)`;
+        gridElement.innerHTML = '';
+        for (var i = 0; i < gridSize; i++) {
+            for (var j = 0; j < numCols; j++) {
+                var cell = document.createElement('div');
+                cell.classList.add('cell');
+                if (grid[i][j] === -1) {
+                    cell.classList.add('mine');
+                } else if (grid[i][j] > 0) {
+                    cell.classList.add('number');
+                    cell.textContent = grid[i][j];
+                } else {
+                    cell.classList.add('empty');
+                }
+                cell.addEventListener('click', function() {
+                    this.style.opacity = '0.5';
+                });
+                gridElement.appendChild(cell);
+            }
+        }
+    }
+
+    renderGrid();
+</script>
+{% endblock %}
+
